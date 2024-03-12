@@ -8,7 +8,7 @@ gem "jsbundling-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "cssbundling-rails"
-gem "jbuilder"
+# gem "jbuilder"
 gem "tzinfo-data", platforms: [:windows, :jruby]
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
@@ -19,6 +19,7 @@ group :development do
   gem "rails-erd"
   gem "chusaku", require: false
   gem "annotate"
+  gem "byebug"
 end
 
 group :development, :test do
