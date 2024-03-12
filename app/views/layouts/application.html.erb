@@ -11,6 +11,25 @@
   </head>
 
   <body>
-    <%= yield %>
-  </body>
+    <div class="container mt-3">
+      <div class="row">
+        <h1 class="mb-3"><%= link_to "Home", root_path %></h1>
+        <% flash.each do |message_type, message| %>
+          <% bootstrap_class = case message_type.to_sym %>
+          <% when :notice then "alert-info" %>
+          <% when :alert then "alert-warning" %>
+          <% when :error then "alert-danger" %>
+        <% else "alert-#{message_type}" %>
+        <% end %>
+        <div class="alert <%= bootstrap_class %> alert-dismissible fade show" role="alert">
+          <%= message %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
 </html>
